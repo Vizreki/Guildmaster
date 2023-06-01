@@ -1,0 +1,64 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#stats {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 400px;
+    background-color: rgb(42, 42, 42);
+}
+
+#assets {
+    position: absolute;
+    left: 300px;
+    top: 0;
+    right: 0;
+    height: 400px;
+    background-color: rgb(53, 53, 53);
+}
+
+#actions {
+    position: absolute;
+    top: 300px;
+    left: 300px;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(47, 47, 47);
+}
+
+.statstitle {
+    margin-left: 10px;
+    color: rgb(204, 82, 0);
+    font-family: 'MedievalSharp';
+    font-size: 40px;
+    text-decoration: underline;
+}
+
+.assetstitle {
+    margin-left: 10px;
+    color: rgb(30, 103, 198);
+    font-family: 'MedievalSharp';
+    font-size: 40px;
+    text-decoration: underline;
+}
+
+.actionstitle {
+    margin-left: 10px;
+    color: rgb(197, 20, 20);
+    font-family: 'MedievalSharp';
+    font-size: 40px;
+    text-decoration: underline;
+}
+
+.statstext {
+    margin-left: 10px;
+    color: rgb(215, 215, 215);
+    font-family: 'MedievalSharp';
+    font-size: 22px;
+}
