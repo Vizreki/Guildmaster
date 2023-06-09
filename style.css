@@ -5,6 +5,12 @@ html {
     padding: 0;
 }
 
+#line {
+    width: 60%;
+    margin-left: 10px;
+    color: red;
+}
+
 #stats {
     position: absolute;
     left: 0;
@@ -34,7 +40,7 @@ html {
 
 .statstitle {
     margin-left: 10px;
-    color: rgb(204, 82, 0);
+    color: rgb(204, 48, 0);
     font-family: 'MedievalSharp';
     font-size: 40px;
     text-decoration: underline;
@@ -42,7 +48,7 @@ html {
 
 .assetstitle {
     margin-left: 10px;
-    color: rgb(30, 103, 198);
+    color: rgb(216, 189, 19);
     font-family: 'MedievalSharp';
     font-size: 40px;
     text-decoration: underline;
@@ -50,15 +56,55 @@ html {
 
 .actionstitle {
     margin-left: 10px;
-    color: rgb(197, 20, 20);
+    color: rgb(3, 99, 209);
     font-family: 'MedievalSharp';
     font-size: 40px;
     text-decoration: underline;
 }
 
-.statstext {
+.assetstext {
+    display: inline-block;
+    margin-left: 30px;
+    font-size: 33px;
+    margin-top: 0px;
+}
+
+.bigstats {
     margin-left: 10px;
     color: rgb(215, 215, 215);
     font-family: 'MedievalSharp';
     font-size: 22px;
+}
+
+.first {
+    margin-left: 0px;
+}
+
+.littlestats {
+    margin-left: 10px;
+    color: rgb(215, 215, 215);
+    font-family: 'MedievalSharp';
+    font-size: 20px;
+}
+
+.focusareas {
+    display: inline-block;
+    width: 150px;
+    margin-left: 60px;
+    margin-top: 0px;
+    margin-bottom: 2px;
+    color: rgb(215, 215, 215);
+    font-family: 'MedievalSharp';
+    font-size: 20px;
+}
+
+
+
+.statstext {
+    position: fixed;
+    margin-top: 0;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    max-width: 270px;
 }

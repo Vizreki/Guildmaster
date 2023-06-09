@@ -6,28 +6,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"></link>
-    <link rel="stylesheet" href="buttons.css"></link>
+    <link rel="stylesheet" href="zbuttons.css"></link>
 
     <script src="script.js"></script>
+    <script src="zmisc.js"></script>
+    <script src="nextweek.js"></script>
 
     <link href='https://fonts.googleapis.com/css?family=MedievalSharp' rel='stylesheet'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"> 
+    
+    
+     
     <title>Guildmaster</title>
 </head>
 <body>
+
     <div id="stats">
         <h1 class="statstitle">Stats</h1>
-    <div>
-        <p class="statstext" id="guildname">Guild Name:</p>
-        <p class="statstext" id="networth">Net Worth:</p>
-        <p class="statstext" id="elapsed">Time in Business:</p>
-        <p class="statstext" id="tstaff">Total Staff:</p>
-        <p class="statstext" id="tprop">Total Properties:</p>
-        <p class="statstext" id="payroll">Payroll:</p>
-        <p class="statstext" id="reputation">Reputation:</p>
-        
+    <div class="bigstats">
+        <p id="guildname">Guild Name:</p>
+        <p id="networth">Net Worth:</p>
+        <p id="payroll">Payroll:</p>
+        <p id="reputation">Reputation:</p>
+
+            <hr id="line">
+
+        <p class="littlestats"><u>Properties</u></p>
+        <p class="statstext"id="proplist">Stores x 1</p>
+
+        <br><br><br><br>
+        <p class="littlestats"><u>Guild Members</u></p>
+        <p class="statstext" id="gmlist">Shopkeeps x 1</p>
+        <br><br><br><br>
+        <p class="littlestats"><u>Assets</u></p>
+        <p class="statstext" id="assetlist">General Goods x 1</p>
+
+
+
+
     </div>
     </div>
 
@@ -38,62 +53,46 @@
     
     <div id="assets">
         <h1 class="assetstitle">Assets</h1>
-        
-        <div class="button-row">
-          <div class="dropdown">
-            <button class="dropdown-button">Properties ↓</button>
-            <div class="dropdown-content">
-              <p class="option">House</p>
-              <p class="option">Store</p>
-              <p class="option">Forge</p>
-              <p>Tavern</p>
-              <p>Store</p>
-              <p>Forge</p>
-              <p>Tavern</p>
-            </div>
-          </div>
-          <div class="dropdown">
-            <button class="dropdown-button">Staff ↓</button>
-            <div class="dropdown-content">
-              <p>Trader</p>
-              <p>Trader</p>
-              <p>Trader</p>
-            </div>
-          </div>
-          <div class="dropdown">
-            <button class="dropdown-button">Services ↓</button>
-            <div class="dropdown-content">
-              <p>Yep</p>
-              <p>Yep</p>
-              <p>Yep</p>
-              <p>Yep</p>
-            </div>
-          </div>
-          <div class="dropdown">
-            <button class="dropdown-button">Hire ↓</button>
-            <div class="dropdown-content">
-              <p>Yep</p>
-              <p>Yep</p>
-              <p>Yep</p>
-              <p>Yep</p>
-            </div>
-          </div>
-          <div class="dropdown">
-            <button class="dropdown-button">Items ↓</button>
-            <div class="dropdown-content">
-              <p>Yep</p>
-              <p>Yep</p>
-              <p>Yep</p>
-              <p>Yep</p>
-            </div>
-          </div>
+        <div class="bigstats">
+        <p class="first assetstext" id="gold">Gold: </p>
+        <p class="assetstext" id="silver">Silver: </p>
+        <p class="assetstext" id="properties">Properties: </p>
+        <p class="assetstext" id="guildmembers">Guild Members: </p>
         </div>
         
-        <br>
-
-        <div class="button-row">
+        <p class="focusareas" id="focus"></p>
+        <p class="focusareas" id="target"></p>
+      
+        <div class="button-row toprow">
           <div class="dropdown">
-            <button class="dropdown-button">Influence ↓</button>
+            <button class="dropdown-button">Focus Area ↓</button>
+            <div class="dropdown-content">
+              <p class="tooltip" onclick="changePD(),updateUI()"
+               data-tooltip="Direct your workshops and other facilities to maximize produciton.">Production </p>
+              <p class="tooltip" onclick="changeSL(),updateUI()" data-tooltip="Oversee your shops and seek out more customers.">Sales</p>
+              <p class="tooltip" onclick="changeMK(),updateUI()" data-tooltip="Get out and build the brand. Interact more with the city folk.">Marketing</p>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">Target Market ↓</button>
+            <div class="dropdown-content">
+              <p class="tooltip" onclick="changeCS(),updateUI()" data-tooltip="The largest district. Basic necessities are in demand.">The Commons</p>
+              <p class="tooltip" onclick="changeKQ(),updateUI()"data-tooltip="Variety of needs here, though not the finer things.">Knight's Quarter</p>
+              <p class="tooltip" onclick="changeSE(),updateUI()" data-tooltip="High demand for luxuries.">Silver Enclave</p>
+              <p class="tooltip" onclick="changeMD(),updateUI()" data-tooltip="Only the finest goods and maybe croissants.">Mage's District</p>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropdown-button">Exchange ↓</button>
+            <div class="dropdown-content">
+              <p class="tooltip" data-tooltip="10 Gold for 100 Silver" onclick="exchangeSilver()">Get Gold</p>
+              <p class="tooltip" data-tooltip="100 Silver for 10 Gold" onclick="exchangeGold()">Get Silver</p>
+            
+            </div>
+          </div>
+          <!--
+          <div class="dropdown">
+            <button class="dropdown-button">Dismiss ↓</button>
             <div class="dropdown-content">
               <p>Yep</p>
               <p>Yep</p>
@@ -101,33 +100,7 @@
               <p>Yep</p>
             </div>
           </div>
-          <div class="dropdown">
-            <button class="dropdown-button">Special ↓</button>
-            <div class="dropdown-content">
-              <p>Yep</p>
-              <p>Yep</p>
-              <p>Yep</p>
-              <p>Yep</p>
-            </div>
-          </div>
-          <div class="dropdown">
-            <button class="dropdown-button">Banking ↓</button>
-            <div class="dropdown-content">
-              <p>Yep</p>
-              <p>Yep</p>
-              <p>Yep</p>
-              <p>Yep</p>
-            </div>
-          </div>
-          <div class="dropdown">
-            <button class="dropdown-button">Loans ↓</button>
-            <div class="dropdown-content">
-              <p>Yep</p>
-              <p>Yep</p>
-              <p>Yep</p>
-              <p>Yep</p>
-            </div>
-          </div>
+                -->
         </div>
           
 
@@ -154,82 +127,79 @@
             <div class="dropdown">
               <button class="dropdown-button">Properties ↓</button>
               <div class="dropdown-content">
-                <p class="option">House</p>
-                <p class="option">Store</p>
-                <p class="option">Forge</p>
-                <p>Tavern</p>
-                <p>Store</p>
-                <p>Forge</p>
-                <p>Tavern</p>
+                <p class="option tooltip" data-tooltip="Brings in a small amount of revenue each day" onclick="buyStore()">General Store - 20G</p>
+                <p class="option tooltip" data-tooltip="Produces various goods and tools">Workshop - 30G</p>
+                <p class="option tooltip" data-tooltip="Arms & Armor are crafted here">Smithy - 30G</p>
+                <p class="option tooltip" data-tooltip="A place to rest, unwind or find some muscle">Tavern - 50G</p>
+                <p class="option tooltip" data-tooltip="Fine weapons and armor are stored and sold from here">Armory - 10G</p>
+                <p class="option tooltip" data-tooltip="Bread, pastries, and of course, croissants">Bakery - 30G</p>
+                <p class="option tooltip" data-tooltip="Where scribes work. Can craft legal documents and magic scrolls">Scriptorium - 20G</p>
+                <p class="option tooltip" data-tooltip="Sells higher end items, trinkets and rare finds">Curio Shop - 50G</p>
+                <p class="option tooltip" data-tooltip="Where paintings and sculptures are made and sold. Very lucrative.">Art Studio - 40G</p>
+                <p class="option tooltip" data-tooltip="Where a mage works. Customers are more rare but always very rich.">Arcane Shop - 65G</p>
               </div>
             </div>
             <div class="dropdown">
-              <button class="dropdown-button">Staff ↓</button>
+              <button class="dropdown-button" id="hire">Hire ↓</button>
               <div class="dropdown-content">
-                <p>Trader</p>
-                <p>Trader</p>
-                <p>Trader</p>
+                <p class="option tooltip" data-tooltip="Can manage one of your general stores" onclick="hireShopkeep()">Shopkeep (5)</p>
+                <p class="option tooltip" data-tooltip="Works at the smithy">Smith (8)</p>
+                <p class="option tooltip" data-tooltip="Crafts a variety of items for you in a workshop">Crafter (8)</p>
+                <p class="option tooltip" data-tooltip="You know where he works">Baker (8)</p>
+                <p class="option tooltip" data-tooltip="Hangs out at the tavern if not on a job">Mercenary (10)</p>
+                <p class="option tooltip" data-tooltip="Manages the tavern for you">Barkeep (10)</p>
+                <p class="option tooltip" data-tooltip="Mid-level manager to help increase profits">Merchant (10)</p>
+                <p class="option tooltip" data-tooltip="Creates boring contracts and such usually">Scribe (12)</p>
+                <p class="option tooltip" data-tooltip="Makes paintings or sculptures for the city's upper class">Artist (15)</p>
+                <p class="option tooltip" data-tooltip="Lives in a tower but provides magic items for you">Mage (22)</p>
+                
               </div>
             </div>
             <div class="dropdown">
-              <button class="dropdown-button">Services ↓</button>
+              <button class="dropdown-button" id="acquisitions">Acquisitions ↓</button>
               <div class="dropdown-content">
-                <p>Yep</p>
-                <p>Yep</p>
-                <p>Yep</p>
-                <p>Yep</p>
+                <p class="option tooltip" data-tooltip="For the general store">General goods x 50 - 20G</p>
+                <p class="option tooltip" data-tooltip="For the general store">Tools x 20 - 40G</p>
+                <p class="option tooltip" data-tooltip="Smelted into metal at the smithy">Ore x 10 - 50G</p>
+                <p class="option tooltip fittooltip" data-tooltip="Sold as curios or used for the arcane">Artifacts - 125G</p>
+                <p class="option tooltip fittooltip" data-tooltip="Used by mages for who knows what">Arcane Components - 200G</p>
               </div>
             </div>
-            <div class="dropdown">
-              <button class="dropdown-button">Hire ↓</button>
-              <div class="dropdown-content">
-                <p>Yep</p>
-                <p>Yep</p>
-                <p>Yep</p>
-                <p>Yep</p>
-              </div>
-            </div>
-            <div class="dropdown">
-              <button class="dropdown-button">Items ↓</button>
-              <div class="dropdown-content">
-                <p>Yep</p>
-                <p>Yep</p>
-                <p>Yep</p>
-                <p>Yep</p>
-              </div>
-            </div>
+          
           </div>
           
           <br>
 
+          <!--
           <div class="button-row">
             <div class="dropdown">
-              <button class="dropdown-button">Influence ↓</button>
+              <button class="dropdown-button lowerbuttons" id="sellprops">Sell ↓</button>
               <div class="dropdown-content">
-                <p>Yep</p>
-                <p>Yep</p>
-                <p>Yep</p>
-                <p>Yep</p>
+                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
+                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
+                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
+                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
               </div>
             </div>
             <div class="dropdown">
-              <button class="dropdown-button">Special ↓</button>
+              <button class="dropdown-button lowerbuttons" id="dismiss">Dismiss ↓</button>
               <div class="dropdown-content">
-                <p>Yep</p>
-                <p>Yep</p>
-                <p>Yep</p>
-                <p>Yep</p>
+                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
+                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
+                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
+                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
               </div>
             </div>
             <div class="dropdown">
-              <button class="dropdown-button">Banking ↓</button>
+              <button class="dropdown-button lowerbuttons" id="sellgoods">Sell ↓</button>
               <div class="dropdown-content">
-                <p>Yep</p>
-                <p>Yep</p>
-                <p>Yep</p>
-                <p>Yep</p>
+                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
+                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
+                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
+                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
               </div>
             </div>
+            
             <div class="dropdown">
               <button class="dropdown-button">Loans ↓</button>
               <div class="dropdown-content">
@@ -249,6 +219,7 @@
               </div>
             </div>
           </div>
+          -->
           
           
           
@@ -265,11 +236,30 @@
 
 
 
+       
+          
+            <button class="guidebutton" onclick="openGuide()">Game Guide</button>
+            <dialog id="gameguide">
+              <h2>Guildmaster</h2>
+              <p>Welcome to the city! You're a newly arrived merchant with only a few silver coins. The city was recently liberated from the barbarian hordes and the economy needs to be revitalized. This is where you come in.<br><br>
+                
+              First, make some gold however you can. Then, choose what to build next, what to sell, who to hire and what your target market is for each week.<br><br>
+
+              As unique situations present themselves, manage your assets wisely. Not all opportunities are as lucrative as they may seem. <br><br>
+
+              Will you play it safe or enter the market aggressively? Meet the needs of the common folk or find a niche market in more affluent circles? <br><br>
+
+              The choice is yours!
+              
+              </p>
+              <button onclick="closeGuide()">Close</button>
+            </dialog>
 
 
 
 
 
+            <button class="nextweek" onclick="nextWeek()">Next Week ></button>
 
 </body>
 </html>

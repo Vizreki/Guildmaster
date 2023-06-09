@@ -1,0 +1,202 @@
+.button-row {
+    display: flex;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-family: 'MedievalSharp';
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-button {
+    margin: 0 20px;
+    padding: 10px 15px;
+    background-color: #816341;
+    border: none;
+    color: #000000;
+    font-family: 'MedievalSharp';
+    font-size: 26px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #a88c5c;
+    padding: 0;
+    z-index: 1;
+    cursor: pointer;
+    margin: 0;
+    font-size: 24px;
+    width: fit-content;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    white-space: nowrap;
+
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content p {
+    margin: 5px 10px;
+    line-height: 1.5;
+    user-select: none;
+}
+
+.dropdown-content p:hover {
+    background-color: #8d7d61;
+    color: black;
+}
+
+.option {
+    font-size: 18px;
+}
+
+.toprow {
+    margin-top: 2px;
+}
+
+
+.lowerbuttons {
+    margin-left: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+.guidebutton {
+    position: fixed;
+    bottom: 25px;
+    right: 750px;
+    margin: 0 20px;
+    padding: 10px 15px;
+    background-color: #816341;
+    border: none;
+    color: #000000;
+    font-family: 'MedievalSharp';
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.guidebutton:hover {
+    background-color: #a78d70;
+    color: #000000;
+}
+
+
+
+
+
+
+
+
+.nextweek {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    margin: 0 20px;
+    padding: 10px 15px;
+    background-color: #816341;
+    border: none;
+    color: #000000;
+    font-family: 'MedievalSharp';
+    font-size: 26px;
+    cursor: pointer;
+
+}
+
+.nextweek:hover {
+    background-color: #a78d70;
+    color: #000000;
+}
+
+.tooltip {
+    position: relative;
+    font-size: 20px;
+    max-width: 500px;
+}
+
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 0;
+    left: 110%;
+    margin-left: 10px;
+    padding: 5px;
+    background-color: #670909;
+    color: #fff;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip.fittooltip::after {
+    font-size: 18px;
+    /* Change the font size as desired */
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+}
+
+/* Styling for the dialog */
+dialog {
+    background-color: rgb(42, 42, 42);
+    color: rgb(215, 215, 215);
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 800px;
+    font-family: 'MedievalSharp';
+}
+
+/* Styling for the dialog title */
+dialog h2 {
+    margin: 0;
+    color: rgb(204, 48, 0);
+    font-family: 'MedievalSharp';
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+/* Styling for the dialog content */
+dialog p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* Styling for the dialog close button */
+dialog button {
+    background-color: rgb(3, 99, 209);
+    color: rgb(215, 215, 215);
+    border: none;
+    border-radius: 3px;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'MedievalSharp';
+}
+
+/* Hover effect for the dialog close button */
+dialog button:hover {
+    background-color: rgb(31, 122, 227);
+}
+
+/* Styling for the overlay background */
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.fitthetext {
+    font-size: 12px;
+}

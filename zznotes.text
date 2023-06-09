@@ -1,0 +1,120 @@
+
+
+↓ Needed ↓
+Way to populate the sell & dismiss button options with currently owned props or hired staff. OR  another way to deal w/ this altogether.
+Incidents with modals (after modal closes, chance of new one)
+Save game with local storage (name, stats, and rest of game state)
+Load game
+Win & Lose conditions
+Selling properties gives a random profit. (Base price 20G = sale between 15 & 22)
+Save game - hitting save could call a function that gathers all variables and puts them into an object which is stored in local storage as json
+
+↓ Possible ↓
+More sounds
+MULTIPLE SAVES PER BROWSER WITH UNIQUE NAMES? SOUNDS DOABLE
+Debt system with UI tracker for the debt amount when you're in the red
+
+↓ NOTES ↓
+Reputation system: saleProfit + (reputation * 10) (only for high end items (art, music, etc))
+ONLOAD SHOULD LOAD A BLANK GAME. LOAD GAME BUTTON SHOULD BE VISIBLE.
+Showing assets, etc (if true, innerHTML=) so that propers, staff, and assets not owned won't show up.
+
+
+
+
+Incident System:
+Random chance of events during each week. When it happens, a random event type is chosen. Both the dialogue and the gold inovlved are randomized. There are random dialogue arrays but also special events with slight random built in.
+
+* has asked for help with * and is needing * gold to cover the expenses. Will you help?
+* is having a problem with * and needs * gold to handle the situation. Can you assist?
+* has asked for your help with a personal matter and is asking for * gold to resolve it. What do you say?
+There is a * happening in a few days. * is asking for donations to make the event even better.
+Hire event
+Unique item events
+
+Special, rare events
+
+
+
+
+
+
+
+
+
+
+CODE? ↓
+
+
+
+
+
+
+
+
+
+
+
+/* 
+function rename() {
+    newName = document.getElementById("myInput").value;
+    document.getElementById("title").innerHTML = newName + " Station"
+    document.getElementById("myInput").value = "";
+    localStorage.setItem('newName', newName);
+  }
+  */
+
+
+
+window.onload = function() {
+    newName = localStorage.getItem('newName') || '';
+    document.getElementById("guildname").innerHTML = newName + " Station";}
+
+
+You can implement the "time in business" counter in JavaScript by keeping track of the number of weeks and updating the UI accordingly. Here's an example implementation:
+
+HTML:
+
+html
+
+<div id="time-counter"></div>
+<button id="next-week-button">Next Week</button>
+
+JavaScript:
+
+javascript
+
+// Initialize the counter and UI element
+let weeks = 0;
+const timeCounter = document.getElementById('time-counter');
+const nextWeekButton = document.getElementById('next-week-button');
+
+// Function to update the UI based on the number of weeks
+function updateUI() {
+  if (weeks < 4) {
+    timeCounter.textContent = `${weeks} weeks`;
+  } else if (weeks < 52) {
+    const months = Math.floor(weeks / 4);
+    timeCounter.textContent = `${months} month${months > 1 ? 's' : ''}`;
+  } else {
+    const years = Math.floor(weeks / 52);
+    timeCounter.textContent = `${years} year${years > 1 ? 's' : ''}`;
+  }
+}
+
+// Event listener for the "Next Week" button
+nextWeekButton.addEventListener('click', () => {
+  weeks++;
+  updateUI();
+});
+
+// Initial UI update
+updateUI();
+
+In this example, we first initialize the counter and get references to the UI elements (timeCounter and nextWeekButton) using their respective ids. Then, we define the updateUI() function that updates the UI text based on the current number of weeks.
+
+The event listener is set up for the "Next Week" button, which increments the weeks counter by 1 and calls the updateUI() function to reflect the updated time in the UI.
+
+Finally, we call the updateUI() function initially to display the initial time counter value.
+
+Note: This is a basic implementation to give you an idea of how to approach the problem. You can modify and expand upon it based on your specific requirements and game logic.
