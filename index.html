@@ -35,10 +35,10 @@
 
         <br><br><br><br>
         <p class="littlestats"><u>Guild Members</u></p>
-        <p class="statstext" id="gmlist">Shopkeeps x 1</p>
+        <p class="statstext" id="gmlist"></p>
         <br><br><br><br>
         <p class="littlestats"><u>Assets</u></p>
-        <p class="statstext" id="assetlist">General Goods x 1</p>
+        <p class="statstext" id="assetlist"></p>
 
 
 
@@ -102,18 +102,7 @@
           </div>
                 -->
         </div>
-          
-
-
-
-
-
-
-
-
-
-    
-    </div>
+      </div>
     
     
 
@@ -127,42 +116,67 @@
             <div class="dropdown">
               <button class="dropdown-button">Properties ↓</button>
               <div class="dropdown-content">
-                <p class="option tooltip" data-tooltip="Brings in a small amount of revenue each day" onclick="buyStore()">General Store - 20G</p>
-                <p class="option tooltip" data-tooltip="Produces various goods and tools">Workshop - 30G</p>
-                <p class="option tooltip" data-tooltip="Arms & Armor are crafted here">Smithy - 30G</p>
-                <p class="option tooltip" data-tooltip="A place to rest, unwind or find some muscle">Tavern - 50G</p>
-                <p class="option tooltip" data-tooltip="Fine weapons and armor are stored and sold from here">Armory - 10G</p>
-                <p class="option tooltip" data-tooltip="Bread, pastries, and of course, croissants">Bakery - 30G</p>
-                <p class="option tooltip" data-tooltip="Where scribes work. Can craft legal documents and magic scrolls">Scriptorium - 20G</p>
-                <p class="option tooltip" data-tooltip="Sells higher end items, trinkets and rare finds">Curio Shop - 50G</p>
-                <p class="option tooltip" data-tooltip="Where paintings and sculptures are made and sold. Very lucrative.">Art Studio - 40G</p>
-                <p class="option tooltip" data-tooltip="Where a mage works. Customers are more rare but always very rich.">Arcane Shop - 65G</p>
+                <p class="option tooltip" data-tooltip="Brings in a small amount of revenue each day" 
+                onclick="buyStore();">General Store - 20G</p>
+                <p class="option tooltip" data-tooltip="Produces various goods and tools" 
+                onclick="buyWorkshop();">Workshop - 30G</p>
+                <p class="option tooltip" data-tooltip="Arms & Armor are crafted here" 
+                onclick="buySmithy();">Smithy - 30G</p>
+                <p class="option tooltip" data-tooltip="A place to rest, unwind or find some muscle" 
+                onclick="buyTavern();">Tavern - 50G</p>
+                <p class="option tooltip" data-tooltip="Fine weapons and armor are stored and sold from here" 
+                onclick="buyArmory();">Armory - 10G</p>
+                <p class="option tooltip" data-tooltip="Bread, pastries, and of course, croissants" 
+                onclick="buyBakery();">Bakery - 30G</p>
+                <p class="option tooltip" data-tooltip="Where scribes work. Can craft legal documents and magic scrolls" 
+                onclick="buyScript();">Scriptorium - 20G</p>
+                <p class="option tooltip" data-tooltip="Sells higher end items, trinkets and rare finds" 
+                onclick="buyCShop();">Curio Shop - 50G</p>
+                <p class="option tooltip" data-tooltip="Where paintings and sculptures are made and sold. Very lucrative." 
+                onclick="buyArtstudio();">Art Studio - 40G</p>
+                <p class="option tooltip" data-tooltip="Where a mage works. Customers are more rare but always very rich."
+                onclick="buyArcShop();">Arcane Shop - 65G</p>
               </div>
             </div>
             <div class="dropdown">
               <button class="dropdown-button" id="hire">Hire ↓</button>
               <div class="dropdown-content">
-                <p class="option tooltip" data-tooltip="Can manage one of your general stores" onclick="hireShopkeep()">Shopkeep (5)</p>
-                <p class="option tooltip" data-tooltip="Works at the smithy">Smith (8)</p>
-                <p class="option tooltip" data-tooltip="Crafts a variety of items for you in a workshop">Crafter (8)</p>
-                <p class="option tooltip" data-tooltip="You know where he works">Baker (8)</p>
-                <p class="option tooltip" data-tooltip="Hangs out at the tavern if not on a job">Mercenary (10)</p>
-                <p class="option tooltip" data-tooltip="Manages the tavern for you">Barkeep (10)</p>
-                <p class="option tooltip" data-tooltip="Mid-level manager to help increase profits">Merchant (10)</p>
-                <p class="option tooltip" data-tooltip="Creates boring contracts and such usually">Scribe (12)</p>
-                <p class="option tooltip" data-tooltip="Makes paintings or sculptures for the city's upper class">Artist (15)</p>
-                <p class="option tooltip" data-tooltip="Lives in a tower but provides magic items for you">Mage (22)</p>
+                <p class="option tooltip" data-tooltip="Can manage one of your general stores" 
+                onclick="hireShopkeep()">Shopkeep (5)</p>
+                <p class="option tooltip" data-tooltip="Works at the smithy"
+                 onclick="hireSmith();">Smith (8)</p>
+                <p class="option tooltip" data-tooltip="Crafts a variety of items for you in a workshop" 
+                onclick="hireCrafter();">Crafter (8)</p>
+                <p class="option tooltip" data-tooltip="You know where he works" 
+                onclick="hireBaker();">Baker (8)</p>
+                <p class="option tooltip" data-tooltip="Hangs out at the tavern if not on a job" 
+                onclick="hireMerc();">Mercenary (10)</p>
+                <p class="option tooltip" data-tooltip="Manages the tavern for you" 
+                onclick="hireBarkeep();">Barkeep (10)</p>
+                <p class="option tooltip" data-tooltip="Mid-level manager to help increase profits"
+                 onclick="hireMerchant();">Merchant (10)</p>
+                <p class="option tooltip" data-tooltip="Creates boring contracts and such usually"
+                 onclick="hireScribe();">Scribe (12)</p>
+                <p class="option tooltip" data-tooltip="Makes paintings or sculptures for the city's upper class"
+                 onclick="hireArtist();">Artist (15)</p>
+                <p class="option tooltip" data-tooltip="Lives in a tower but provides magic items for you"
+                 onclick="hireMage();">Mage (22)</p>
                 
               </div>
             </div>
             <div class="dropdown">
               <button class="dropdown-button" id="acquisitions">Acquisitions ↓</button>
               <div class="dropdown-content">
-                <p class="option tooltip" data-tooltip="For the general store">General goods x 50 - 20G</p>
-                <p class="option tooltip" data-tooltip="For the general store">Tools x 20 - 40G</p>
-                <p class="option tooltip" data-tooltip="Smelted into metal at the smithy">Ore x 10 - 50G</p>
-                <p class="option tooltip fittooltip" data-tooltip="Sold as curios or used for the arcane">Artifacts - 125G</p>
-                <p class="option tooltip fittooltip" data-tooltip="Used by mages for who knows what">Arcane Components - 200G</p>
+                <p class="option tooltip" data-tooltip="For the general store" 
+                onclick="buyGoods();">General Goods x 100 - 10G</p>
+                <p class="option tooltip" data-tooltip="For the general store"
+                 onclick="buyTools();">Tools x 20 - 20G</p>
+                <p class="option tooltip" data-tooltip="Smelted into metal at the smithy"
+                 onclick="buyOre();">Ore x 10 - 50G</p>
+                <p class="option tooltip fittooltip" data-tooltip="Sold as curios or used for the arcane" 
+                onclick="buyArtifacts();">Artifacts - 125G</p>
+                <p class="option tooltip fittooltip" data-tooltip="Used by mages for who knows what"
+                 onclick="buyArcComps();">Arcane Components - 200G</p>
               </div>
             </div>
           
