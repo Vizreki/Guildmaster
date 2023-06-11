@@ -27,7 +27,8 @@
         <p id="guildname">Guild Name:</p>
         <p id="networth">Net Worth:</p>
         <p id="payroll">Payroll:</p>
-        <p id="reputation">Reputation:</p>
+        <p class="rep" id="reputation">Reputation:</p>
+        <p class="rep" id="reptext">Ha ha</p>
 
             <hr id="line">
 
@@ -125,9 +126,9 @@
                 onclick="buySmithy();">Smithy - 30G</p>
                 <p class="option tooltip" data-tooltip="A place to rest, unwind or find some muscle" 
                 onclick="buyTavern();">Tavern - 50G</p>
-                <p class="option tooltip" data-tooltip="Fine weapons and armor are stored and sold from here" 
+                <p class="option tooltip" data-tooltip="Weapons and armor are kept and sold from here" 
                 onclick="buyArmory();">Armory - 10G</p>
-                <p class="option tooltip" data-tooltip="Bread, pastries, and of course, croissants" 
+                <p class="option tooltip" data-tooltip="Bread, pastries, and the like" 
                 onclick="buyBakery();">Bakery - 30G</p>
                 <p class="option tooltip" data-tooltip="Where scribes work. Can craft legal documents and magic scrolls" 
                 onclick="buyScript();">Scriptorium - 20G</p>
@@ -142,22 +143,22 @@
             <div class="dropdown">
               <button class="dropdown-button" id="hire">Hire ↓</button>
               <div class="dropdown-content">
-                <p class="option tooltip" data-tooltip="Can manage one of your general stores" 
-                onclick="hireShopkeep()">Shopkeep (5)</p>
+                <p class="option tooltip" data-tooltip="Manages one of your general stores" 
+                onclick="hireShopkeep()">Shopkeep (3)</p>
                 <p class="option tooltip" data-tooltip="Works at the smithy"
-                 onclick="hireSmith();">Smith (8)</p>
+                 onclick="hireSmith();">Smith (5)</p>
                 <p class="option tooltip" data-tooltip="Crafts a variety of items for you in a workshop" 
-                onclick="hireCrafter();">Crafter (8)</p>
+                onclick="hireCrafter();">Crafter (5)</p>
                 <p class="option tooltip" data-tooltip="You know where he works" 
-                onclick="hireBaker();">Baker (8)</p>
+                onclick="hireBaker();">Baker (5)</p>
                 <p class="option tooltip" data-tooltip="Hangs out at the tavern if not on a job" 
-                onclick="hireMerc();">Mercenary (10)</p>
+                onclick="hireMerc();">Mercenary (8)</p>
                 <p class="option tooltip" data-tooltip="Manages the tavern for you" 
-                onclick="hireBarkeep();">Barkeep (10)</p>
+                onclick="hireBarkeep();">Barkeep (8)</p>
                 <p class="option tooltip" data-tooltip="Mid-level manager to help increase profits"
-                 onclick="hireMerchant();">Merchant (10)</p>
-                <p class="option tooltip" data-tooltip="Creates boring contracts and such usually"
-                 onclick="hireScribe();">Scribe (12)</p>
+                 onclick="hireMerchant();">Merchant (8)</p>
+                <p class="option tooltip" data-tooltip="Creates boring contracts and such"
+                 onclick="hireScribe();">Scribe (10)</p>
                 <p class="option tooltip" data-tooltip="Makes paintings or sculptures for the city's upper class"
                  onclick="hireArtist();">Artist (15)</p>
                 <p class="option tooltip" data-tooltip="Lives in a tower but provides magic items for you"
@@ -176,7 +177,7 @@
                  onclick="buyOre();">Ore x 10 - 50G</p>
                 <p class="option tooltip fittooltip" data-tooltip="Sold as curios or used for the arcane" 
                 onclick="buyArtifacts();">Artifacts - 125G</p>
-                <p class="option tooltip fittooltip" data-tooltip="Used by mages for who knows what"
+                <p class="option tooltip fittooltip" data-tooltip="Mages use these for projects"
                  onclick="buyArcComps();">Arcane Components - 200G</p>
               </div>
             </div>
@@ -202,7 +203,7 @@
 
        
           
-            <button class="guidebutton" onclick="openGuide()">Game Guide</button>
+            <button class="guidebutton" onclick="openGuide()">Game Intro</button>
             <dialog id="gameguide">
               <h2>Guildmaster</h2>
               <p>Welcome to the city! You're a newly arrived merchant with only a few silver coins. The city was recently liberated from the barbarian hordes and the economy needs to be revitalized. This is where you come in.<br><br>

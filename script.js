@@ -1,10 +1,10 @@
-let gold = 10000;
+let gold = 0;
 let silver = 100;
 let properties = 1;
 let guildMembers = 1;
 let guildName = "";
 let wealth = 22;
-let netWorth = gold + silver + wealth;
+
 
 
 let payRoll = 0;
@@ -38,7 +38,7 @@ let scribe = 0;
 let artist = 0;
 let mage = 0;
 
-let genGoods = 20;
+let genGoods = 100;
 let tools = 0;
 let ore = 0;
 let swords = 0;
@@ -58,13 +58,16 @@ window.onload = function(){
 }
 
 function updateUI(){
+    let netWorth = gold + (silver / 10) + wealth + " Gold";
     let commagold = gold.toLocaleString();
+    let commasilver = silver.toLocaleString();
     let commanet = netWorth.toLocaleString();
     countProps();
     countGMs();
     countAssets();
+    repCheck();
     document.getElementById("gold").innerHTML = "Gold: " + commagold;
-    document.getElementById("silver").innerHTML = "Silver: " + silver;
+    document.getElementById("silver").innerHTML = "Silver: " + commasilver;
     document.getElementById("networth").innerHTML = "Net Worth: " + commanet;
     document.getElementById("properties").innerHTML = "Properties: " + properties;
     document.getElementById("guildmembers").innerHTML = "Guild Members: " + guildMembers;
@@ -102,14 +105,14 @@ function buyCShop(){if (gold >= 50){gold-= 50;wealth+=50;curioshop++;properties+
 function buyArtstudio(){if (gold >= 40){gold-= 40;wealth+=40;artstudio++;properties++;coins();updateUI();}}
 function buyArcShop(){if (gold >= 65){gold-= 65;wealth+=65;arcaneshop++;properties++;coins();updateUI();}}
 
-function hireShopkeep(){shopkeep++;guildMembers++;payRoll+=5;coins();updateUI();}
-function hireSmith(){smith++;guildMembers++;payRoll+=8;coins();updateUI();}
-function hireCrafter(){crafter++;guildMembers++;payRoll+=8;coins();updateUI();}
-function hireBaker(){baker++;guildMembers++;payRoll+=8;coins();updateUI();}
-function hireMerc(){mercenary++;guildMembers++;payRoll+=10;coins();updateUI();}
-function hireBarkeep(){barkeep++;guildMembers++;payRoll+=10;coins();updateUI();}
-function hireMerchant(){merchant++;guildMembers++;payRoll+=10;coins();updateUI();}
-function hireScribe(){scribe++;guildMembers++;payRoll+=12;coins();updateUI();}
+function hireShopkeep(){shopkeep++;guildMembers++;payRoll+=3;coins();updateUI();}
+function hireSmith(){smith++;guildMembers++;payRoll+=5;coins();updateUI();}
+function hireCrafter(){crafter++;guildMembers++;payRoll+=5;coins();updateUI();}
+function hireBaker(){baker++;guildMembers++;payRoll+=5;coins();updateUI();}
+function hireMerc(){mercenary++;guildMembers++;payRoll+=8;coins();updateUI();}
+function hireBarkeep(){barkeep++;guildMembers++;payRoll+=8;coins();updateUI();}
+function hireMerchant(){merchant++;guildMembers++;payRoll+=8;coins();updateUI();}
+function hireScribe(){scribe++;guildMembers++;payRoll+=10;coins();updateUI();}
 function hireArtist(){artist++;guildMembers++;payRoll+=15;coins();updateUI();}
 function hireMage(){mage++;guildMembers++;payRoll+=22;coins();updateUI();}
 
@@ -152,7 +155,7 @@ document.getElementById("gmlist").innerHTML = members;
 }
 
 function countAssets(){
-    let assets = " General Goods: " + genGoods;
+ let assets = " General Goods: " + genGoods;
 if (tools) assets += " Tools: " + tools;
 if (ore) assets += " Ore: " + ore;
 if (swords) assets += " Swords: " + swords;
@@ -161,39 +164,13 @@ if (paintings) {assets += '<span style="color: gold;"> Paintings: ' + paintings 
 if (sculptures) {assets += '<span style="color: gold;"> Sculptures: ' + sculptures + '</span>';}
 if (artifacts) assets += " Artifacts: " + artifacts;
 if (scrolls) assets += " Scroll: " + scrolls;
-if (arcanecomps) assets += " Arcane Components: " + arcanecomps;
+if (arcanecomps) {assets += '<span style="color: gold;"> Arcane Components: ' + arcanecomps + '</span>';}
 if (elixirs) {assets += '<span style="color: gold;"> Elixirs: ' + elixirs + '</span>';}
 if (runes) {assets += '<span style="color: gold;"> Runes: ' + runes + '</span>';}
 if (wands) {assets += '<span style="color: gold;"> Wands: ' + wands + '</span>';}
-  
-  
-  
-
 
 document.getElementById("assetlist").innerHTML = assets;
 }
-/*
-let genGoods = 20;
-let tools = 0;
-let ore = 0;
-let swords = 0;
-let armor = 0;
-let scrolls = 0;
-let paintings = 0;
-let wands = 0;
-let runes = 0;
-let elixirs = 0;
-let artifacts = 0;
-let arcanecomps = 0;
-*/
-
-
-
-
-
-
-
-
 
 
 function openGuide() {let dialog = document.getElementById('gameguide');dialog.showModal();}
@@ -201,6 +178,16 @@ function openGuide() {let dialog = document.getElementById('gameguide');dialog.s
 function closeGuide() {let dialog = document.getElementById('gameguide');dialog.close();}
 
 
+
+function repCheck(){
+    if (reputation < 5){document.getElementById("reptext").innerHTML = '<span style="color: grey;"> "Unheard of" </span>';}
+    else if (reputation >= 5 && reputation < 10){document.getElementById("reptext").innerHTML = '<span style="color: white;"> "New trader" </span>';}
+    else if (reputation >= 10 && reputation < 15){document.getElementById("reptext").innerHTML = '<span style="color: lightblue;"> "Good merchant" </span>';;}
+    else if (reputation >= 15 && reputation < 20){document.getElementById("reptext").innerHTML = '<span style="color: orange;"> "Rising star" </span>';;}
+    else if (reputation >= 20 && reputation < 30){document.getElementById("reptext").innerHTML = '<span style="color: lightgreen;"> "Local hero" </span>';}
+    else if (reputation >= 30 && reputation < 50){document.getElementById("reptext").innerHTML = '<span style="color: gold;"> "Guildmaster" </span>';}
+    else if (reputation >= 50){document.getElementById("reptext").innerHTML = '<span style="color: yellow;"> "Living Legend" </span>';}
+}
 
 
 

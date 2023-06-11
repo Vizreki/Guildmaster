@@ -9,27 +9,28 @@ const type1_1 = {
     8: "The Royal Adviser ",
     9: "The Alchemist's Guild ",
     10: "A nobleman ",
-    11: "The Blacksmith ",
-    12: "A jester ",
+    11: "A Blacksmith ",
+    12: "A druid ",
     13: "The Royal Librarian ",
     14: "The Temple Priest ",
     15: "A town crier ",
     16: "The Royal Guard ",
     17: "A spy ",
     18: "The Royal Chef ",
-    19: "The Master Archer ",
+    19: "The Captain of the Guard ",
     20: "A stable boy ",
     21: "The Royal Herald ",
     22: "The Royal Physician ",
-    23: "A storyteller ",
+    23: "A jester ",
     24: "The Court Musician ",
     25: "A diplomat ",
     26: "The Royal Seamstress ",
     27: "A court painter ",
     28: "The Royal Falconer ",
-    29: "The Royal Astrologer ",
+    29: "The Royal Astronomer ",
     30: "A juggler ",
-    31: "The Royal Historian "
+    31: "The Royal Historian ",
+    32: "A Temple Acolyte",
 };
 
 const type1_2 = {
@@ -56,20 +57,15 @@ const type1_2 = {
     21: "their apprentice who needs extra help. ",
     22: "some damaged buildings in the poor part of town. ",
     23: "a noble's missing heir, who is rumored to have been kidnapped. ",
-    24: "a local blacksmith accused of selling counterfeit goods. ",
+    24: "a local blacksmith who is selling counterfeit goods. ",
     25: "a pack of wild animals that have become unusually aggressive near the town. ",
-    26: "a 'good cause...whatever that means. ",
+    26: 'a "good cause"... ',
     27: "a widow needing to feed her children. ",
     28: "a shipment that has gone missing. ",
     29: "an injured castle servant. ",
-    30: "a pet rabbit. "
+    30: "a pet rabbit that is missing. "
   };
   
-  
-
-
-
-
 const type2_1 = {
     1: "feast ",
     2: "tournament ",
@@ -129,10 +125,8 @@ function startEvent(){
         + "is asking if you'll contribute " + randomGold + " Gold?";
         document.getElementById("eventtext").innerHTML = sentence;
     }
-
-
-
     let dialog = document.getElementById('testevent');dialog.showModal();   
+
 }
 
 

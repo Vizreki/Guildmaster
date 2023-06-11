@@ -108,3 +108,12 @@ html {
     display: inline-block;
     max-width: 270px;
 }
+
+.rep {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+#reptext {
+    font-size: 18px;
+}
