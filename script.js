@@ -2,8 +2,13 @@ let gold = 10000;
 let silver = 100;
 let properties = 1;
 let guildMembers = 1;
+let guildName = "";
+let wealth = 22;
+let netWorth = gold + silver + wealth;
+
 
 let payRoll = 0;
+let reputation = 1;
 
 const focusareas = ["Production", "Sales", "Marketing"]
 const targetmarkets = ["The Commons", "Knight's Quarter", "Silver Enclave", "Mage's District"]
@@ -36,6 +41,14 @@ let mage = 0;
 let genGoods = 20;
 let tools = 0;
 let ore = 0;
+let swords = 0;
+let armor = 0;
+let scrolls = 0;
+let paintings = 0;
+let sculptures = 0;
+let wands = 0;
+let runes = 0;
+let elixirs = 0;
 let artifacts = 0;
 let arcanecomps = 0;
 
@@ -46,16 +59,20 @@ window.onload = function(){
 }
 
 function updateUI(){
+    let commagold = gold.toLocaleString();
+    let commanet = netWorth.toLocaleString();
     countProps();
     countGMs();
     countAssets();
-    document.getElementById("gold").innerHTML = "Gold: " + gold;
+    document.getElementById("gold").innerHTML = "Gold: " + commagold;
     document.getElementById("silver").innerHTML = "Silver: " + silver;
+    document.getElementById("networth").innerHTML = "Net Worth: " + commanet;
     document.getElementById("properties").innerHTML = "Properties: " + properties;
     document.getElementById("guildmembers").innerHTML = "Guild Members: " + guildMembers;
     document.getElementById("payroll").innerHTML = "Payroll: " + payRoll + "G per week";
     document.getElementById("focus").innerHTML = focusArea;
     document.getElementById("target").innerHTML = targetMarket;
+    
     
     
 
@@ -75,16 +92,16 @@ function exchangeSilver(){if (silver >= 100){silver-=100;gold+=10;updateUI();coi
 function exchangeGold(){if (gold >= 10){silver+=100;gold-=10;updateUI();coins();}}
 
 
-function buyStore(){if (gold >= 20){gold-= 20;store++;properties++;coins();updateUI();}}
-function buyWorkshop(){if (gold >= 30){gold-= 30;workshop++;properties++;coins();updateUI();}}
-function buySmithy(){if (gold >= 30){gold-= 30;smithy++;properties++;coins();updateUI();}}
-function buyTavern(){if (gold >= 50){gold-= 50;tavern++;properties++;coins();updateUI();}}
-function buyArmory(){if (gold >= 10){gold-= 10;armory++;properties++;coins();updateUI();}}
-function buyBakery(){if (gold >= 30){gold-= 30;bakery++;properties++;coins();updateUI();}}
-function buyScript(){if (gold >= 20){gold-= 20;scriptorium++;properties++;coins();updateUI();}}
-function buyCShop(){if (gold >= 50){gold-= 50;curioshop++;properties++;coins();updateUI();}}
-function buyArtstudio(){if (gold >= 40){gold-= 40;artstudio++;properties++;coins();updateUI();}}
-function buyArcShop(){if (gold >= 65){gold-= 65;arcaneshop++;properties++;coins();updateUI();}}
+function buyStore(){if (gold >= 20){gold-= 20;wealth+=20;store++;properties++;coins();updateUI();}}
+function buyWorkshop(){if (gold >= 30){gold-= 30;wealth+=30;workshop++;properties++;coins();updateUI();}}
+function buySmithy(){if (gold >= 30){gold-= 30;wealth+=30;smithy++;properties++;coins();updateUI();}}
+function buyTavern(){if (gold >= 50){gold-= 50;wealth+=50;tavern++;properties++;coins();updateUI();}}
+function buyArmory(){if (gold >= 10){gold-= 10;wealth+=10;armory++;properties++;coins();updateUI();}}
+function buyBakery(){if (gold >= 30){gold-= 30;wealth+=30;bakery++;properties++;coins();updateUI();}}
+function buyScript(){if (gold >= 20){gold-= 20;wealth+=20;scriptorium++;properties++;coins();updateUI();}}
+function buyCShop(){if (gold >= 50){gold-= 50;wealth+=50;curioshop++;properties++;coins();updateUI();}}
+function buyArtstudio(){if (gold >= 40){gold-= 40;wealth+=40;artstudio++;properties++;coins();updateUI();}}
+function buyArcShop(){if (gold >= 65){gold-= 65;wealth+=65;arcaneshop++;properties++;coins();updateUI();}}
 
 function hireShopkeep(){shopkeep++;guildMembers++;payRoll+=5;coins();updateUI();}
 function hireSmith(){smith++;guildMembers++;payRoll+=8;coins();updateUI();}
@@ -97,31 +114,29 @@ function hireScribe(){scribe++;guildMembers++;payRoll+=12;coins();updateUI();}
 function hireArtist(){artist++;guildMembers++;payRoll+=15;coins();updateUI();}
 function hireMage(){mage++;guildMembers++;payRoll+=22;coins();updateUI();}
 
-function buyGoods(){if (gold >= 10){genGoods+=100;gold-=10;coins();updateUI();}}
-function buyTools(){if (gold >= 20){tools+=20;gold-=20;coins();updateUI();}}
-function buyOre(){if (gold >= 50){ore+=10;gold-=50;coins();updateUI();}}
-function buyArtifacts(){if (gold >= 125){artifacts++;gold-=125;coins();updateUI();}}
-function buyArcComps(){if (gold >= 200){arcanecomps++;gold-=200;coins();updateUI();}}
-
-
-
+function buyGoods(){if (gold >= 10){genGoods+=100;gold-=10;wealth+=10;coins();updateUI();}}
+function buyTools(){if (gold >= 20){tools+=20;gold-=20;wealth+=20;coins();updateUI();}}
+function buyOre(){if (gold >= 50){ore+=10;gold-=50;wealth+=50;coins();updateUI();}}
+function buyArtifacts(){if (gold >= 125){artifacts++;gold-=125;wealth+=125;coins();updateUI();}}
+function buyArcComps(){if (gold >= 200){arcanecomps++;gold-=200;wealth+=200;coins();updateUI();}}
 
 function countProps(){
     let props = " General Stores: " + store;
-if (workshop) props += ", Workshops: " + workshop;
-if (smithy) props += ", Smithies: " + smithy;
-if (tavern) props += ", Taverns: " + tavern;
-if (armory) props += ", Armories: " + armory;
-if (bakery) props += ", Bakeries: " + bakery;
-if (scriptorium) props += ", Scriptoria: " + scriptorium;
-if (curioshop) props += ", Curio Shops: " + curioshop;
-if (artstudio) props += ", Art Studios: " + artstudio;
-if (arcaneshop) props += ", Arcane Shops: " + arcaneshop;
+if (workshop) props += " Workshops: " + workshop;
+if (smithy) props += " Smithies: " + smithy;
+if (tavern) props += " Taverns: " + tavern;
+if (armory) props += " Armories: " + armory;
+if (bakery) props += " Bakeries: " + bakery;
+if (scriptorium) props += " Scriptoria: " + scriptorium;
+if (curioshop) props += " Curio Shops: " + curioshop;
+if (artstudio) props += " Art Studios: " + artstudio;
+if (arcaneshop) props += " Arcane Shops: " + arcaneshop;
 
 document.getElementById("proplist").innerHTML = props;
 }
 
 function countGMs(){
+    
     let members = "";
 if (shopkeep) members += " Shopkeeps: " + shopkeep;    
 if (smith) members += " Smiths: " + smith;
@@ -139,13 +154,42 @@ document.getElementById("gmlist").innerHTML = members;
 
 function countAssets(){
     let assets = " General Goods: " + genGoods;
-if (tools) assets += ", Tools: " + tools;
-if (ore) assets += ", Ore: " + ore;
-if (artifacts) assets += ", Artifacts: " + artifacts;
-if (arcanecomps) assets += ", Arcane Components: " + arcanecomps;
+if (tools) assets += " Tools: " + tools;
+if (ore) assets += " Ore: " + ore;
+if (swords) assets += " Swords: " + swords;
+if (armor) assets += " Armor: " + armor;
+if (paintings) {assets += '<span style="color: gold;"> Paintings: ' + paintings + '</span>';}
+if (sculptures) {assets += '<span style="color: gold;"> Sculptures: ' + sculptures + '</span>';}
+if (artifacts) assets += " Artifacts: " + artifacts;
+if (scrolls) assets += " Scroll: " + scrolls;
+if (arcanecomps) assets += " Arcane Components: " + arcanecomps;
+if (elixirs) {assets += '<span style="color: gold;"> Elixirs: ' + elixirs + '</span>';}
+if (runes) {assets += '<span style="color: gold;"> Runes: ' + runes + '</span>';}
+if (wands) {assets += '<span style="color: gold;"> Wands: ' + wands + '</span>';}
+  
+  
+  
+
 
 document.getElementById("assetlist").innerHTML = assets;
 }
+/*
+let genGoods = 20;
+let tools = 0;
+let ore = 0;
+let swords = 0;
+let armor = 0;
+let scrolls = 0;
+let paintings = 0;
+let wands = 0;
+let runes = 0;
+let elixirs = 0;
+let artifacts = 0;
+let arcanecomps = 0;
+*/
+
+
+
 
 
 

@@ -8,6 +8,7 @@ Load game
 Win & Lose conditions
 Selling properties gives a random profit. (Base price 20G = sale between 15 & 22)
 Items besides acquisitions that are crafted, art, armor, etc
+Detailed Game guide
 
 ↓ Possible ↓
 More sounds
@@ -16,15 +17,17 @@ More sounds
 Reputation system: saleProfit + (reputation * 10) (only for high end items (art, music, etc))
 
 
-Incident System:
+Event System:
 Random chance of events during each week. When it happens, a random event type is chosen. Both the dialogue and the gold inovlved are randomized. There are random dialogue arrays but also special events with slight random built in.
 
-* has asked for help with * and is needing * gold to cover the expenses. Will you help?
-* is having a problem with * and needs * gold to handle the situation. Can you assist?
-* has asked for your help with a personal matter and is asking for * gold to resolve it. What do you say?
-There is a * happening in a few days. * is asking for donations to make the event even better.
-Hire event
-Unique item events
+1 - * has asked for help with * and is needing * gold to cover the expenses. Will you help?
+2 - * is having a problem with * and needs * gold to handle the situation. Can you assist?
+3 - * has asked for your help with a personal matter and is asking for * gold to resolve it. What do you say?
+4 - There is a * happening in a few days. * is asking for * 
 
-Special, rare events
+5 - Hire event
+
+6 - Unique item events
+
+7 - Special, rare events
 

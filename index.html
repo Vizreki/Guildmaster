@@ -5,12 +5,13 @@
     <link rel="shortcut icon" href="#">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"></link>
+    <link rel="stylesheet" href="zstyle.css"></link>
     <link rel="stylesheet" href="zbuttons.css"></link>
 
     <script src="script.js"></script>
-    <script src="zmisc.js"></script>
-    <script src="nextweek.js"></script>
+    <script src="zmusic.js"></script>
+    <script src="sznextweek.js"></script>
+    <script src="sevents.js"></script>
 
     <link href='https://fonts.googleapis.com/css?family=MedievalSharp' rel='stylesheet'>
     
@@ -183,57 +184,6 @@
           </div>
           
           <br>
-
-          <!--
-          <div class="button-row">
-            <div class="dropdown">
-              <button class="dropdown-button lowerbuttons" id="sellprops">Sell ↓</button>
-              <div class="dropdown-content">
-                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
-                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
-                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
-                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
-              </div>
-            </div>
-            <div class="dropdown">
-              <button class="dropdown-button lowerbuttons" id="dismiss">Dismiss ↓</button>
-              <div class="dropdown-content">
-                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
-                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
-                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
-                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
-              </div>
-            </div>
-            <div class="dropdown">
-              <button class="dropdown-button lowerbuttons" id="sellgoods">Sell ↓</button>
-              <div class="dropdown-content">
-                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
-                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
-                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
-                <p class="option tooltip" data-tooltip="Ha ha ha">Yep</p>
-              </div>
-            </div>
-            
-            <div class="dropdown">
-              <button class="dropdown-button">Loans ↓</button>
-              <div class="dropdown-content">
-                <p>Yep</p>
-                <p>Yep</p>
-                <p>Yep</p>
-                <p>Yep</p>
-              </div>
-            </div>
-            <div class="dropdown">
-              <button class="dropdown-button">Sell ↓</button>
-              <div class="dropdown-content">
-                <p>Yep</p>
-                <p>Yep</p>
-                <p>Yep</p>
-                <p>Yep</p>
-              </div>
-            </div>
-          </div>
-          -->
           
           
           
@@ -267,6 +217,19 @@
               
               </p>
               <button onclick="closeGuide()">Close</button>
+            </dialog>
+
+
+            <dialog id="testevent">
+              <h2>Your orders?</h2>
+              <p id="eventtext">Something is happening, make a choice!<br><br></p>
+
+
+              <button class="eventbuttons" onclick="option1()">Agree</button>
+              <button class="eventbuttons" onclick="option2()">Decline</button>
+              
+
+
             </dialog>
 
 

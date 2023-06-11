@@ -200,3 +200,8 @@ dialog::backdrop {
 .fitthetext {
     font-size: 12px;
 }
+
+.eventbuttons {
+    display: inline-block;
+    margin-left: 10px;
+}
