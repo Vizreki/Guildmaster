@@ -54,8 +54,7 @@ let arcanecomps = 0;
 
 
 window.onload = function(){
-    
-    updateUI();
+        updateUI();
 }
 
 function updateUI(){

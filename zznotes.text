@@ -21,8 +21,6 @@ Event System:
 Random chance of events during each week. When it happens, a random event type is chosen. Both the dialogue and the gold inovlved are randomized. There are random dialogue arrays but also special events with slight random built in.
 
 1 - * has asked for help with * and is needing * gold to cover the expenses. Will you help?
-2 - * is having a problem with * and needs * gold to handle the situation. Can you assist?
-3 - * has asked for your help with a personal matter and is asking for * gold to resolve it. What do you say?
 4 - There is a * happening in a few days. * is asking for * 
 
 5 - Hire event

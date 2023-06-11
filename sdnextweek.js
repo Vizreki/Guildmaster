@@ -5,7 +5,6 @@ function nextWeek(){
     else {marketing = 0;}
     let eventChance = Math.floor(Math.random() * 7) + marketing;
     if (eventChance >= 4){
-        console.log(eventChance)
         startEvent();
     }
     
