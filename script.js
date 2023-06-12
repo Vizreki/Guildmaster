@@ -8,7 +8,7 @@ let wealth = 22;
 
 
 let payRoll = 0;
-let reputation = 1;
+let reputation = 0;
 
 const focusareas = ["Production", "Sales", "Marketing"]
 const targetmarkets = ["The Commons", "Knight's Quarter", "Silver Enclave", "Mage's District"]
@@ -38,7 +38,10 @@ let scribe = 0;
 let artist = 0;
 let mage = 0;
 
-let genGoods = 100;
+let storefronts = store + armory;
+let highendstores = curioshop + arcaneshop;
+
+let genGoods = 30;
 let tools = 0;
 let ore = 0;
 let swords = 0;
@@ -58,7 +61,7 @@ window.onload = function(){
 }
 
 function updateUI(){
-    let netWorth = gold + (silver / 10) + wealth + " Gold";
+    let netWorth = gold + (silver / 10) + wealth;
     let commagold = gold.toLocaleString();
     let commasilver = silver.toLocaleString();
     let commanet = netWorth.toLocaleString();
@@ -68,7 +71,7 @@ function updateUI(){
     repCheck();
     document.getElementById("gold").innerHTML = "Gold: " + commagold;
     document.getElementById("silver").innerHTML = "Silver: " + commasilver;
-    document.getElementById("networth").innerHTML = "Net Worth: " + commanet;
+    document.getElementById("networth").innerHTML = "Net Worth: " + commanet + " Gold";
     document.getElementById("properties").innerHTML = "Properties: " + properties;
     document.getElementById("guildmembers").innerHTML = "Guild Members: " + guildMembers;
     document.getElementById("payroll").innerHTML = "Payroll: " + payRoll + "G per week";
@@ -92,25 +95,25 @@ function changeMD(){targetMarket = targetmarkets[3];write();}
 
 function exchangeSilver(){if (silver >= 100){silver-=100;gold+=10;updateUI();coins();}}
 function exchangeGold(){if (gold >= 10){silver+=100;gold-=10;updateUI();coins();}}
+function largeExchange(){if (silver >= 1000){silver-=1000;gold+=100;updateUI();coins();}}
 
+function buyStore(){if (gold >= 50){gold-= 50;wealth+=50;store++;properties++;coins();updateUI();}}
+function buyWorkshop(){if (gold >= 80){gold-= 80;wealth+=80;workshop++;properties++;coins();updateUI();}}
+function buySmithy(){if (gold >= 120){gold-= 120;wealth+=120;smithy++;properties++;coins();updateUI();}}
+function buyTavern(){if (gold >= 100){gold-= 100;wealth+=100;tavern++;properties++;coins();updateUI();}}
+function buyArmory(){if (gold >= 65){gold-= 65;wealth+=65;armory++;properties++;coins();updateUI();}}
+function buyBakery(){if (gold >= 75){gold-= 75;wealth+=75;bakery++;properties++;coins();updateUI();}}
+function buyScript(){if (gold >= 140){gold-= 140;wealth+=140;scriptorium++;properties++;coins();updateUI();}}
+function buyCShop(){if (gold >= 100){gold-= 100;wealth+=100;curioshop++;properties++;coins();updateUI();}}
+function buyArtstudio(){if (gold >= 200){gold-= 200;wealth+=200;artstudio++;properties++;coins();updateUI();}}
+function buyArcShop(){if (gold >= 315){gold-= 315;wealth+=315;arcaneshop++;properties++;coins();updateUI();}}
 
-function buyStore(){if (gold >= 20){gold-= 20;wealth+=20;store++;properties++;coins();updateUI();}}
-function buyWorkshop(){if (gold >= 30){gold-= 30;wealth+=30;workshop++;properties++;coins();updateUI();}}
-function buySmithy(){if (gold >= 30){gold-= 30;wealth+=30;smithy++;properties++;coins();updateUI();}}
-function buyTavern(){if (gold >= 50){gold-= 50;wealth+=50;tavern++;properties++;coins();updateUI();}}
-function buyArmory(){if (gold >= 10){gold-= 10;wealth+=10;armory++;properties++;coins();updateUI();}}
-function buyBakery(){if (gold >= 30){gold-= 30;wealth+=30;bakery++;properties++;coins();updateUI();}}
-function buyScript(){if (gold >= 20){gold-= 20;wealth+=20;scriptorium++;properties++;coins();updateUI();}}
-function buyCShop(){if (gold >= 50){gold-= 50;wealth+=50;curioshop++;properties++;coins();updateUI();}}
-function buyArtstudio(){if (gold >= 40){gold-= 40;wealth+=40;artstudio++;properties++;coins();updateUI();}}
-function buyArcShop(){if (gold >= 65){gold-= 65;wealth+=65;arcaneshop++;properties++;coins();updateUI();}}
-
-function hireShopkeep(){shopkeep++;guildMembers++;payRoll+=3;coins();updateUI();}
-function hireSmith(){smith++;guildMembers++;payRoll+=5;coins();updateUI();}
-function hireCrafter(){crafter++;guildMembers++;payRoll+=5;coins();updateUI();}
-function hireBaker(){baker++;guildMembers++;payRoll+=5;coins();updateUI();}
-function hireMerc(){mercenary++;guildMembers++;payRoll+=8;coins();updateUI();}
-function hireBarkeep(){barkeep++;guildMembers++;payRoll+=8;coins();updateUI();}
+function hireShopkeep(){shopkeep++;guildMembers++;payRoll+=2;coins();updateUI();}
+function hireSmith(){smith++;guildMembers++;payRoll+=4;coins();updateUI();}
+function hireCrafter(){crafter++;guildMembers++;payRoll+=4;coins();updateUI();}
+function hireBaker(){baker++;guildMembers++;payRoll+=4;coins();updateUI();}
+function hireMerc(){mercenary++;guildMembers++;payRoll+=6;coins();updateUI();}
+function hireBarkeep(){barkeep++;guildMembers++;payRoll+=6;coins();updateUI();}
 function hireMerchant(){merchant++;guildMembers++;payRoll+=8;coins();updateUI();}
 function hireScribe(){scribe++;guildMembers++;payRoll+=10;coins();updateUI();}
 function hireArtist(){artist++;guildMembers++;payRoll+=15;coins();updateUI();}
