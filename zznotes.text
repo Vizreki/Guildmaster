@@ -1,5 +1,4 @@
 
-
 ↓ Needed ↓
 Sell and dismiss buttons
 Incidents with modals (after modal closes, chance of new one)
@@ -10,24 +9,14 @@ Selling properties gives a random profit. (Base price 20G = sale between 15 & 22
 Items besides acquisitions that are crafted, art, armor, etc
 Detailed Game guide
 Networth calculates everything?
+Focus areas and target market applied to ALL applicable functions?
+Reputation bonus applied to ALL applicable functions?
 
 ↓ Possible ↓
 More sounds
 
-↓ NOTES ↓
-Reputation system: saleProfit + (reputation * 10) (only for high end items (art, music, etc))
-
-
 
 Event System:
-Random chance of events during each week. When it happens, a random event type is chosen. Both the dialogue and the gold inovlved are randomized. There are random dialogue arrays but also special events with slight random built in.
 
-1 - * has asked for help with * and is needing * gold to cover the expenses. Will you help?
-4 - There is a * happening in a few days. * is asking for * 
-
-5 - Hire event
-
-6 - Unique item events
-
-7 - Special, rare events
+Hire event? Unique item events? Special, rare events?
 

@@ -1,7 +1,7 @@
 let gold = 0;
 let silver = 100;
 let properties = 1;
-let guildMembers = 1;
+let guildMembers = 2;
 let guildName = "";
 let wealth = 22;
 
@@ -21,7 +21,7 @@ let workshop = 0;
 let smithy = 0;
 let tavern = 0;
 let armory = 0;
-let bakery = 0;
+let bakery = 1;
 let scriptorium = 0;
 let curioshop = 0;
 let artstudio = 0;
@@ -30,7 +30,7 @@ let arcaneshop = 0;
 let shopkeep = 0;
 let smith = 0;
 let crafter = 0;
-let baker = 0;
+let baker = 1;
 let mercenary = 0;
 let barkeep = 0;
 let merchant = 0;
@@ -38,10 +38,10 @@ let scribe = 0;
 let artist = 0;
 let mage = 0;
 
-let storefronts = store + armory;
-let highendstores = curioshop + arcaneshop;
+let storefronts = store + armory + bakery;
+let hestorefronts = curioshop + scriptorium + artstudio + arcaneshop;
 
-let genGoods = 30;
+let genGoods = 0;
 let tools = 0;
 let ore = 0;
 let swords = 0;
@@ -96,17 +96,18 @@ function changeMD(){targetMarket = targetmarkets[3];write();}
 function exchangeSilver(){if (silver >= 100){silver-=100;gold+=10;updateUI();coins();}}
 function exchangeGold(){if (gold >= 10){silver+=100;gold-=10;updateUI();coins();}}
 function largeExchange(){if (silver >= 1000){silver-=1000;gold+=100;updateUI();coins();}}
+function hugeExchange(){if (silver >= 10000){silver-=10000;gold+=1000;updateUI();coins();}}
 
-function buyStore(){if (gold >= 50){gold-= 50;wealth+=50;store++;properties++;coins();updateUI();}}
-function buyWorkshop(){if (gold >= 80){gold-= 80;wealth+=80;workshop++;properties++;coins();updateUI();}}
-function buySmithy(){if (gold >= 120){gold-= 120;wealth+=120;smithy++;properties++;coins();updateUI();}}
-function buyTavern(){if (gold >= 100){gold-= 100;wealth+=100;tavern++;properties++;coins();updateUI();}}
-function buyArmory(){if (gold >= 65){gold-= 65;wealth+=65;armory++;properties++;coins();updateUI();}}
-function buyBakery(){if (gold >= 75){gold-= 75;wealth+=75;bakery++;properties++;coins();updateUI();}}
-function buyScript(){if (gold >= 140){gold-= 140;wealth+=140;scriptorium++;properties++;coins();updateUI();}}
-function buyCShop(){if (gold >= 100){gold-= 100;wealth+=100;curioshop++;properties++;coins();updateUI();}}
-function buyArtstudio(){if (gold >= 200){gold-= 200;wealth+=200;artstudio++;properties++;coins();updateUI();}}
-function buyArcShop(){if (gold >= 315){gold-= 315;wealth+=315;arcaneshop++;properties++;coins();updateUI();}}
+function buyStore(){if (gold >= 100){gold-= 100;wealth+=100;store++;properties++;coins();updateUI();}}
+function buyWorkshop(){if (gold >= 150){gold-= 150;wealth+=150;workshop++;properties++;coins();updateUI();}}
+function buySmithy(){if (gold >= 180){gold-= 180;wealth+=180;smithy++;properties++;coins();updateUI();}}
+function buyTavern(){if (gold >= 250){gold-= 250;wealth+=250;tavern++;properties++;coins();updateUI();}}
+function buyArmory(){if (gold >= 200){gold-= 200;wealth+=200;armory++;properties++;coins();updateUI();}}
+function buyBakery(){if (gold >= 135){gold-= 135;wealth+=135;bakery++;properties++;coins();updateUI();}}
+function buyScript(){if (gold >= 175){gold-= 175;wealth+=175;scriptorium++;properties++;coins();updateUI();}}
+function buyCShop(){if (gold >= 200){gold-= 200;wealth+=200;curioshop++;properties++;coins();updateUI();}}
+function buyArtstudio(){if (gold >= 300){gold-= 300;wealth+=300;artstudio++;properties++;coins();updateUI();}}
+function buyArcShop(){if (gold >= 475){gold-= 475;wealth+=475;arcaneshop++;properties++;coins();updateUI();}}
 
 function hireShopkeep(){shopkeep++;guildMembers++;payRoll+=2;coins();updateUI();}
 function hireSmith(){smith++;guildMembers++;payRoll+=4;coins();updateUI();}
@@ -185,7 +186,8 @@ function closeGuide() {let dialog = document.getElementById('gameguide');dialog.
 function repCheck(){
     if (reputation < 5){document.getElementById("reptext").innerHTML = '<span style="color: grey;"> "Unheard of" </span>';}
     else if (reputation >= 5 && reputation < 10){document.getElementById("reptext").innerHTML = '<span style="color: white;"> "New trader" </span>';}
-    else if (reputation >= 10 && reputation < 15){document.getElementById("reptext").innerHTML = '<span style="color: lightblue;"> "Good merchant" </span>';;}
+    else if (reputation >= 10 && reputation < 15){document.getElementById("reptext").innerHTML =
+    '<span style="color: lightblue;"> "Good merchant" </span>';;}
     else if (reputation >= 15 && reputation < 20){document.getElementById("reptext").innerHTML = '<span style="color: orange;"> "Rising star" </span>';;}
     else if (reputation >= 20 && reputation < 30){document.getElementById("reptext").innerHTML = '<span style="color: lightgreen;"> "Local hero" </span>';}
     else if (reputation >= 30 && reputation < 50){document.getElementById("reptext").innerHTML = '<span style="color: gold;"> "Guildmaster" </span>';}
