@@ -79,11 +79,17 @@ function updateUI(){
     document.getElementById("payroll").innerHTML = "Payroll: " + payRoll + "G / Month";
     document.getElementById("focus").innerHTML = focusArea;
     document.getElementById("target").innerHTML = targetMarket;
-    
-    
-    
 
+    propCheck();
+    
+    
 }
+
+function propCheck(){
+    if (store > 2){document.getElementById("store").style.textDecoration = "line-through";
+    document.getElementById("store").onclick = null;
+    document.getElementById("store").setAttribute("data-tooltip", "Increase rep for more building permits");
+}}
 
 
 function changePD(){focusArea = focusareas[0];write();}
@@ -125,15 +131,15 @@ function sellArtstudio(){if (artstudio >= 1){gold+= 250;wealth-=250;artstudio--;
 function sellArcShop(){if (arcaneshop >= 1){gold+= 400;wealth-=400;arcaneshop--;properties;coins();updateUI();}}
 
 function hireShopkeep(){shopkeep++;guildMembers++;payRoll+=1;coins();updateUI();}
-function hireSmith(){smith++;guildMembers++;payRoll+=2;coins();updateUI();}
-function hireCrafter(){crafter++;guildMembers++;payRoll+=2;coins();updateUI();}
-function hireBaker(){baker++;guildMembers++;payRoll+=2;coins();updateUI();}
-function hireMerc(){mercenary++;guildMembers++;payRoll+=3;coins();updateUI();}
-function hireBarkeep(){barkeep++;guildMembers++;payRoll+=3;coins();updateUI();}
+function hireSmith(){smith++;guildMembers++;payRoll+=3;coins();updateUI();}
+function hireCrafter(){crafter++;guildMembers++;payRoll+=3;coins();updateUI();}
+function hireBaker(){baker++;guildMembers++;payRoll+=3;coins();updateUI();}
+function hireMerc(){mercenary++;guildMembers++;payRoll+=4;coins();updateUI();}
+function hireBarkeep(){barkeep++;guildMembers++;payRoll+=4;coins();updateUI();}
 function hireMerchant(){merchant++;guildMembers++;payRoll+=4;coins();updateUI();}
-function hireScribe(){scribe++;guildMembers++;payRoll+=5;coins();updateUI();}
-function hireArtist(){artist++;guildMembers++;payRoll+=6;coins();updateUI();}
-function hireMage(){mage++;guildMembers++;payRoll+=8;coins();updateUI();}
+function hireScribe(){scribe++;guildMembers++;payRoll+=6;coins();updateUI();}
+function hireArtist(){artist++;guildMembers++;payRoll+=8;coins();updateUI();}
+function hireMage(){mage++;guildMembers++;payRoll+=12;coins();updateUI();}
 
 function buyGoods(){if (gold >= 4){genGoods+=25;gold-=4;wealth+=4;coins();updateUI();}}
 function buyMGoods(){if (gold >= 75){genGoods+=500;gold-=75;wealth+=75;coins();updateUI();}}

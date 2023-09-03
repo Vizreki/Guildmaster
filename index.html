@@ -118,7 +118,7 @@
             <div class="dropdown">
               <button class="dropdown-button">Properties ↓</button>
               <div class="dropdown-content">
-                <p class="option tooltip" data-tooltip="Brings in a small amount of revenue each day. Needs a shopkeep." 
+                <p id="store" class="option tooltip" data-tooltip="Where goods and tools are sold. Needs a shopkeep." 
                 onclick="buyStore();">General Store - 40g</p>
                 <p class="option tooltip" data-tooltip="Where a crafter produces various goods and tools." 
                 onclick="buyWorkshop();">Workshop - 60g</p>
@@ -144,25 +144,25 @@
               <button class="dropdown-button" id="hire">Hire ↓</button>
               <div class="dropdown-content">
                 <p class="option tooltip" data-tooltip="Manages one of your stores" 
-                onclick="hireShopkeep()">Shopkeep (2)</p>
+                onclick="hireShopkeep()">Shopkeep (1)</p>
                 <p class="option tooltip" data-tooltip="Works at the smithy"
-                 onclick="hireSmith();">Smith (4)</p>
+                 onclick="hireSmith();">Smith (3)</p>
                 <p class="option tooltip" data-tooltip="Crafts a variety of items for you in a workshop" 
-                onclick="hireCrafter();">Crafter (4)</p>
+                onclick="hireCrafter();">Crafter (3)</p>
                 <p class="option tooltip" data-tooltip="Gets up at dawn to make croissants" 
-                onclick="hireBaker();">Baker (4)</p>
+                onclick="hireBaker();">Baker (3)</p>
                 <p class="option tooltip" data-tooltip="Hangs out at the tavern if not on a job" 
-                onclick="hireMerc();">Mercenary (6)</p>
+                onclick="hireMerc();">Mercenary (4)</p>
                 <p class="option tooltip" data-tooltip="Manages and stocks the tavern for you" 
-                onclick="hireBarkeep();">Barkeep (6)</p>
+                onclick="hireBarkeep();">Barkeep (4)</p>
                 <p class="option tooltip" data-tooltip="Mid-level manager to help increase profits"
-                 onclick="hireMerchant();">Merchant (8)</p>
+                 onclick="hireMerchant();">Merchant (4)</p>
                 <p class="option tooltip" data-tooltip="Creates boring contracts and such"
-                 onclick="hireScribe();">Scribe (10)</p>
+                 onclick="hireScribe();">Scribe (6)</p>
                 <p class="option tooltip" data-tooltip="Makes paintings or sculptures for the city's upper class"
-                 onclick="hireArtist();">Artist (15)</p>
+                 onclick="hireArtist();">Artist (8)</p>
                 <p class="option tooltip" data-tooltip="Creates powerful magic items"
-                 onclick="hireMage();">Mage (22)</p>
+                 onclick="hireMage();">Mage (12)</p>
                 
               </div>
             </div>
@@ -172,7 +172,7 @@
                 <p class="option tooltip" data-tooltip="For the general store" 
                 onclick="buyGoods();">General Goods x 25 - 4G</p>
                 <p class="option tooltip" data-tooltip="For the general store" 
-                onclick="buyMGoods();">General Goods x 1,000 - 92G</p>
+                onclick="buyMGoods();">General Goods x 500 - 75G</p>
                 <p class="option tooltip" data-tooltip="For the general store"
                  onclick="buyTools();">Tools x 20 - 20G</p>
                 <p class="option tooltip" data-tooltip="For the general store"
