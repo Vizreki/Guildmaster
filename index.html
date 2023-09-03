@@ -88,9 +88,9 @@
             <button class="dropdown-button">Exchange ↓</button>
             <div class="dropdown-content">
               <p class="tooltip" data-tooltip="10 Gold for 100 Silver" onclick="exchangeSilver()">Get Gold</p>
-              <p class="tooltip" data-tooltip="100 Silver for 10 Gold" onclick="exchangeGold()">Get Silver</p>
               <p class="tooltip" data-tooltip="100 Gold for 1,000 Silver" onclick="largeExchange()">Get Gold</p>
               <p class="tooltip" data-tooltip="1,000 Gold for 10,000 Silver" onclick="hugeExchange()">Get Gold</p>
+              <p class="tooltip" data-tooltip="20 Gold (+5G interest)" onclick="getLoan()">Get Loan</p>
                           
             </div>
           </div>
@@ -108,8 +108,6 @@
         </div>
       </div>
     
-    
-
 
     <div id="actions"> 
         <h1 class="actionstitle">Actions</h1>
@@ -121,21 +119,21 @@
               <button class="dropdown-button">Properties ↓</button>
               <div class="dropdown-content">
                 <p class="option tooltip" data-tooltip="Brings in a small amount of revenue each day. Needs a shopkeep." 
-                onclick="buyStore();">General Store - 100g</p>
+                onclick="buyStore();">General Store - 40g</p>
                 <p class="option tooltip" data-tooltip="Where a crafter produces various goods and tools." 
-                onclick="buyWorkshop();">Workshop - 150g</p>
+                onclick="buyWorkshop();">Workshop - 60g</p>
                 <p class="option tooltip" data-tooltip="Where ore is smelted to make fine arms & armor by a smith." 
-                onclick="buySmithy();">Smithy - 180g</p>
+                onclick="buySmithy();">Smithy - 80g</p>
                 <p class="option tooltip" data-tooltip="A place to drink, rest, or find some muscle." 
-                onclick="buyTavern();">Tavern - 250g</p>
+                onclick="buyTavern();">Tavern - 120g</p>
                 <p class="option tooltip" data-tooltip="Where weapons and armor are sold. Needs a shopkeep." 
-                onclick="buyArmory();">Armory - 200g</p>
+                onclick="buyArmory();">Armory - 60g</p>
                 <p class="option tooltip" data-tooltip="Bread, pastries, and the like. Needs a baker & a shopkeep." 
-                onclick="buyBakery();">Bakery - 135g</p>
+                onclick="buyBakery();">Bakery - 80g</p>
                 <p class="option tooltip" data-tooltip="Where scribes make scrolls and such. Needs a scribe and a merchant." 
-                onclick="buyScript();">Scriptorium - 175g</p>
+                onclick="buyScript();">Scriptorium - 200g</p>
                 <p class="option tooltip" data-tooltip="Sells rare finds & other trinkets. Needs a merchant." 
-                onclick="buyCShop();">Curio Shop - 200g</p>
+                onclick="buyCShop();">Curio Shop - 300g</p>
                 <p class="option tooltip" data-tooltip="Where fine art is made and sold. Needs an artist and a merchant." 
                 onclick="buyArtstudio();">Art Studio - 300g</p>
                 <p class="option tooltip" data-tooltip="Arcane items are sold here. Also needs a merchant."
@@ -163,7 +161,7 @@
                  onclick="hireScribe();">Scribe (10)</p>
                 <p class="option tooltip" data-tooltip="Makes paintings or sculptures for the city's upper class"
                  onclick="hireArtist();">Artist (15)</p>
-                <p class="option tooltip" data-tooltip="Lives in a tower but provides magic items for you"
+                <p class="option tooltip" data-tooltip="Creates powerful magic items"
                  onclick="hireMage();">Mage (22)</p>
                 
               </div>
@@ -172,9 +170,13 @@
               <button class="dropdown-button" id="acquisitions">Acquisitions ↓</button>
               <div class="dropdown-content">
                 <p class="option tooltip" data-tooltip="For the general store" 
-                onclick="buyGoods();">General Goods x 100 - 10G</p>
+                onclick="buyGoods();">General Goods x 25 - 4G</p>
+                <p class="option tooltip" data-tooltip="For the general store" 
+                onclick="buyMGoods();">General Goods x 1,000 - 92G</p>
                 <p class="option tooltip" data-tooltip="For the general store"
                  onclick="buyTools();">Tools x 20 - 20G</p>
+                <p class="option tooltip" data-tooltip="For the general store"
+                 onclick="buyMTools();">Tools x 100 - 92G</p>
                 <p class="option tooltip" data-tooltip="Smelted into metal at the smithy"
                  onclick="buyOre();">Ore x 10 - 50G</p>
                 <p class="option tooltip fittooltip" data-tooltip="Sold as curios or used for the arcane" 
@@ -208,11 +210,11 @@
             <button class="guidebutton" onclick="openGuide()">Game Intro</button>
             <dialog id="gameguide">
               <h2>Guildmaster</h2>
-              <p>Welcome to the city! You're a newly arrived merchant with only a few silver coins. The city was recently liberated from the barbarian hordes and the economy needs to be revitalized. This is where you come in.<br><br>
+              <p>Welcome to the city! You're a newly arrived merchant with only a pouch of silver coins and a few goods to sell. The city was recently liberated from the barbarian hordes and the economy needs to be revitalized. This is where you come in.<br><br>
                 
               First, make some gold selling common goods. Then, choose what to build next, what to sell, who to hire and what your target market is for each week.<br><br>
 
-              As unique situations present themselves, manage your assets wisely. Not all opportunities are as lucrative as they may seem. Also remember that while basic needs are always in demand, you'll need to build a reputation before trying to sell higher quality items. <br><br>
+              As unique situations present themselves, manage your assets wisely. Not all opportunities are as lucrative as they may seem. Also remember that while basic needs are always in demand, you'll need to build a reputation before trying to sell higher quality items. Note that your staff is paid once a month. If you're in debt and unable to fix your guild's finances within three months, you will lose.<br><br>
 
               Will you play it safe or enter the market aggressively? Meet the needs of the common folk or find a niche market in more affluent circles? <br><br>
 
@@ -228,7 +230,7 @@
               <p id="eventtext">Something happens here!<br><br></p>
 
 
-              <button class="eventbuttons" onclick="agree()">Agree</button>
+              <button class="eventbuttons" id="agree" onclick="agree()">Agree</button>
               <button class="eventbuttons" onclick="decline()">Decline</button>
               
 

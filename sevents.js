@@ -102,12 +102,12 @@ const type2_1 = {
 };
 
 let randomGold = Math.floor(Math.random() * 5) + 1;
-let randomRep = Math.floor(Math.random() * 5) + 1;
 
 function makeRandom(){
     randomGold = Math.floor(Math.random() * 5) + 1;
-    randomRep = Math.floor(Math.random() * 5) + 1;
+    console.log(randomGold)
 }
+
 
 
 function startEvent(){
@@ -130,13 +130,13 @@ function startEvent(){
 }
 
 
-function decline() {let dialog = document.getElementById('testevent');dialog.close();}
+function decline() {let dialog = document.getElementById('testevent');dialog.close();incomeGen();makeRandom();}
 
-function agree() {let dialog = document.getElementById('testevent');dialog.close();
-    gold-= randomGold;
+function agree() {let dialog = document.getElementById('testevent');
+    if (monies >= randomGold){gold-= randomGold;dialog.close();makeRandom();}
     updateUI();
-    makeRandom();
-    coins();
+    
+    
 }
 
 

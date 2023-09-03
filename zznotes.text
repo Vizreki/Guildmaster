@@ -9,8 +9,10 @@ Selling properties gives a random profit. (Base price 20G = sale between 15 & 22
 Items besides acquisitions that are crafted, art, armor, etc
 Detailed Game guide
 Networth calculates everything?
+All UI accurate at start?
 Focus areas and target market applied to ALL applicable functions?
 Reputation bonus applied to ALL applicable functions?
+An interesting endgame (reason for playing through) (using mercenaries for unique events and missions)
 
 ↓ Possible ↓
 More sounds
@@ -20,3 +22,157 @@ Event System:
 
 Hire event? Unique item events? Special, rare events?
 
+OLD MONEY GENERATION CODE ↓
+
+    if (store >= 1){        
+        let lacking = storefronts - shopkeep;
+        let profit = Math.floor(Math.random() * 100) + Math.floor(Math.random() * 50) + 10;
+        let loss = Math.floor(profit) * (lacking *.4)
+        let net = profit - loss;
+        if (genGoods <= 0){net = Math.floor(Math.random() * 20) + 2;}        
+        silver+= Math.floor(net) * store;
+        genGoods-= Math.floor(profit * .05) * store;
+        if (genGoods < 0){genGoods = 0};
+    }
+
+    if (store >= 1 && tools > 0){        
+        let lacking = storefronts - shopkeep;
+        let profit = Math.floor(Math.random() * 150) + Math.floor(Math.random() * 50) + 10;
+        let loss = Math.floor(profit) * (lacking *.4)
+        let net = profit - loss;
+        silver+= Math.floor(net) * store;
+        tools-= Math.floor(profit * .05) * store;
+        if (tools < 0){tools = 0};
+    }
+    
+    if (tavern >= 1){        
+        let lacking = tavern - barkeep;
+        let profit = Math.floor(Math.random() * 200) + Math.floor(Math.random() * 100);
+        let loss = Math.floor(profit) * (lacking *.4)
+        let net = profit - loss;       
+        silver+= Math.floor(net) * tavern;
+    }
+
+    if (bakery >= 1){        
+        let lacking = storefronts - shopkeep + baker;
+        let profit = Math.floor(Math.random() * 200) + Math.floor(Math.random() * 100) + 10;
+        let loss = Math.floor(profit) * (lacking *.4)
+        let net = profit - loss;
+        if (net < 0){net = Math.floor(Math.random() * 8) + 2;}
+        silver+= Math.floor(net) * bakery;
+    }
+
+    if (armory >= 1 && swords >= 1) {
+        let lacking = merchant - hestorefronts;
+        if (lacking < 0){lacking-=2};
+        let chance = Math.floor(Math.random() * 20) + lacking;
+        if (chance >8){
+        let sold = Math.floor(Math.random() * 2) + armory;
+        gold += sold * 30;
+        swords-= sold; 
+        if (swords < 0){swords = 0};             
+        }        
+    }
+
+    if (armory >= 1 && armor >= 1) {
+        let lacking = merchant - hestorefronts;
+        if (lacking < 0){lacking-=2};
+        let chance = Math.floor(Math.random() * 20) + lacking;
+        if (chance >8){
+        let sold = Math.floor(Math.random() * 2) + armory;
+        gold += sold * 30;
+        armor-= sold; 
+        if (armor < 0){armor = 0};             
+        }        
+    }
+
+    if (curioshop >= 1 && artifacts >= 1) {
+        let lacking = 2 + hestorefronts - merchant;
+        let chance = Math.floor(Math.random() * 20) - lacking;
+        if (chance >15){
+        let sold = Math.floor(Math.random() * 3)
+        gold += sold * 40;
+        artifacts-= sold;              
+        }        
+    }
+
+    if (curioshop >= 1) {
+        let lacking = 2 + hestorefronts - merchant;
+        let chance = Math.floor(Math.random() * 20) - lacking;
+        if (chance >7){
+        let sold = Math.floor(Math.random() * 3)
+        gold += sold * 10;                      
+        }        
+    }
+
+    if (scriptorium >= 1 && scroll >= 1) {
+        let lacking = merchant - hestorefronts;
+        if (lacking < 0){lacking-=2};
+        let chance = Math.floor(Math.random() * 20) + lacking;
+        if (chance >8){
+        let sold = Math.floor(Math.random() * 2) + scriptorium;
+        gold += sold * 30;
+        scroll-= sold; 
+        if (scroll < 0){scroll = 0};             
+        }        
+    }
+
+    if (artstudio >= 1 && paintings >= 1) {
+        let lacking = merchant - hestorefronts;
+        if (lacking < 0){lacking-=2};
+        let chance = Math.floor(Math.random() * 20) + lacking;
+        if (chance >8){
+        let sold = Math.floor(Math.random() * 2) + artstudio;
+        gold += sold * 30;
+        paintings-= sold; 
+        if (paintings < 0){paintings = 0};             
+        }        
+    }
+
+    if (artstudio >= 1 && sculptures >= 1) {
+        let lacking = merchant - hestorefronts;
+        if (lacking < 0){lacking-=2};
+        let chance = Math.floor(Math.random() * 20) + lacking;
+        if (chance >8){
+        let sold = Math.floor(Math.random() * 2) + artstudio;
+        gold += sold * 30;
+        sculptures-= sold; 
+        if (sculptures < 0){sculptures = 0};             
+        }        
+    }
+
+    if (arcaneshop >= 1 && elixirs >= 1) {
+        let lacking = merchant - hestorefronts;
+        if (lacking < 0){lacking-=2};
+        let chance = Math.floor(Math.random() * 20) + lacking;
+        if (chance >8){
+        let sold = Math.floor(Math.random() * 2) + arcaneshop;
+        gold += sold * 30;
+        elixirs-= sold; 
+        if (elixirs < 0){elixirs = 0};             
+        }        
+    }
+
+    if (arcaneshop >= 1 && runes >= 1) {
+        let lacking = merchant - hestorefronts;
+        if (lacking < 0){lacking-=3};
+        let chance = Math.floor(Math.random() * 20) + lacking;
+        if (chance >12){
+        let sold = Math.floor(Math.random() * 1) + arcaneshop;
+        gold += sold * 55;
+        runes-= sold; 
+        if (runes < 0){runes = 0};             
+        }        
+    }
+
+    if (arcaneshop >= 1 && wands >= 1) {
+        let lacking = merchant - hestorefronts;
+        if (lacking < 0){lacking-=4};
+        let chance = Math.floor(Math.random() * 20) + lacking;
+        if (chance >12){
+        let sold = Math.floor(Math.random() * 1) + arcaneshop;
+        gold += sold * 100;
+        wands-= sold; 
+        if (wands < 0){wands = 0};             
+        }        
+    }
